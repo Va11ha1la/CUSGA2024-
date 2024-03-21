@@ -8,6 +8,10 @@ public class CardList : MonoBehaviour
 
     public List<Card> cardList = new List<Card>();
     // Start is called before the first frame update
+    void Awake()
+    {
+        
+    }
     void Start()
     {
         LoadCardData();
@@ -64,4 +68,13 @@ public class CardList : MonoBehaviour
             }
         }
     }
+
+    //private void TestLoad()
+    //{
+    //    foreach (var card in cardList)
+    //    {
+    //        Debug.Log(card.id.ToString()+ card.cardName);
+    //    }
+    //}
+
 }
