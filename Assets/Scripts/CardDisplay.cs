@@ -15,12 +15,8 @@ public class CardDisplay : MonoBehaviour
     public Text atkText;
 
     [Space(10)]
-    [Header("卡牌点数")]
+    [Header("卡牌等级")]
     public Text pointText;
-
-    [Space(10)]
-    [Header("卡牌元素类型")]
-    public Text elementTypeText;
 
     [Space(10)]
     [Header("卡牌效果")]
@@ -48,28 +44,23 @@ public class CardDisplay : MonoBehaviour
     {
         nameText.text = card.cardName;
         pointText.text = card.point.ToString();
+        effectText.text = card.effect;
         if (card is ElementCard)
         {
             var elementCard = card as ElementCard;
-            elementTypeText.text = elementCard.elementType;
 
             atkText.gameObject.SetActive(false);
-            effectText.gameObject.SetActive(false);
         }
         else if (card is WeaponCard)
         {
             var weaponCard = card as WeaponCard;
             atkText.text = weaponCard.atk.ToString();
 
-            effectText.gameObject.SetActive(false);
-            elementTypeText.gameObject.SetActive(false);
         }
         else if (card is ActivityCard)
         {
             var activityCard = card as ActivityCard;
-            effectText.text = activityCard.effect;
 
-            elementTypeText.gameObject.SetActive(false);
             atkText .gameObject.SetActive(false);
         }
     }

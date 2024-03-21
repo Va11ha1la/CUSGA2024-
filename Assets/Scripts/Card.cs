@@ -7,21 +7,24 @@ public class Card
     public int id;
     public string cardName;
     public int point;
-    public Card(int _id, string _cardName, int _point)
+    public string effect;
+    public string background;
+    public Card(int _id, string _cardName, int _point, string _effect, string _background)
     {
         this.id = _id;
         this.cardName = _cardName;
         this.point = _point;
+        this.effect = _effect;
+        this.background = _background;
     }
 }
 
 public class ElementCard: Card
 {
-    public string elementType;
-
-    public ElementCard(int _id, string _cardName, int _point, string _elementType):base(_id, _cardName, _point)
+    
+    public ElementCard(int _id, string _cardName, int _point, string _effect, string _background):base(_id, _cardName, _point, _effect, _background)
     {
-        this.elementType = _elementType;
+        
     }
 }
 
@@ -29,7 +32,7 @@ public class WeaponCard : Card
 {
     public int atk;
 
-    public WeaponCard(int _id, string _cardName, int _point, int _atk) : base(_id, _cardName, _point)
+    public WeaponCard(int _id, string _cardName, int _point, string _effect, string _background, int _atk) : base(_id, _cardName, _point, _effect, _background)
     {
         this.atk = _atk;
     }
@@ -37,10 +40,8 @@ public class WeaponCard : Card
 
 public class ActivityCard : Card
 {
-    public string effect;
-
-    public ActivityCard(int _id, string _cardName, int _point, string effect) : base(_id, _cardName, _point)
+    public ActivityCard(int _id, string _cardName, int _point, string _effect, string _background) : base(_id, _cardName, _point, _effect, _background)
     {
-        this.effect = effect;
+
     }
 }
